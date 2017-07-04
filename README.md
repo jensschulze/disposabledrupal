@@ -1,10 +1,10 @@
 # A disposable Drupal 8 instance
 
 ## Preliminaries
-`./build`
+Execute `./build YOURTAG` where `YOURTAG` is the desired tag for the image being built.
 
 ## Usage
-`docker run -it --rm -p 8888:8888 jensschulze/disposabledrupal:8`
+`docker run -it --rm -p 8888:8888 jensschulze/disposabledrupal:YOURTAG`
 
 You can now access your fresh Drupal 8 instance at *127.0.0.1:8888*, have fun!
 

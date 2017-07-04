@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 
-docker build -t jensschulze/disposabledrupal:8 .
+if [ -z "${1}" ]
+then
+  echo "You have to choose a tag for your image!"
+  echo "Usage: ./build YOURTAG"
+  exit 1
+fi
+
+docker build -t jensschulze/disposabledrupal:${1} .
