@@ -64,6 +64,9 @@ RUN mkdir -p /var/www && rm -rf /var/www/* && cd /root && php ./composerinstall.
 RUN  cd /var/www/disposabledrupal/web && \
     ../bin/drush si -y --db-url=sqlite://sites/default/files/.ht.sqlite --account-name=admin --account-pass=admin --site-name="Disposable Drupal" standard install_configure_form.enable_update_status_module=NULL install_configure_form.enable_update_status_emails=NULL
 
+RUN cd /var/www/disposabledrupal/web && \
+        ../bin/drush cex -y
+
 WORKDIR /var/www/disposabledrupal/web
 
 EXPOSE 8888
