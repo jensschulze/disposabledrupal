@@ -1,12 +1,14 @@
 # A disposable Drupal 8 instance
 
 ## Preliminaries
-Execute `./build YOURTAG` where `YOURTAG` is the desired tag for the image being built.
+Execute `./build [-b BRANCH] YOURTAG` where
+* `BRANCH` is an existing git branch in [https://github.org/jensschulze/drupal-project](https://github.org/jensschulze/drupal-project)
+* `YOURTAG` is the desired tag for the image being built.
 
 ## Usage
 `docker run -it --rm -p 8888:8888 jensschulze/disposabledrupal:YOURTAG`
 
-You can now access your fresh Drupal 8 instance at *127.0.0.1:8888*, have fun!
+You can now access your fresh Drupal 8 instance at [http://127.0.0.1:8888](http://127.0.0.1:8888), have fun!
 
 ## Site Admin
 User: `admin`

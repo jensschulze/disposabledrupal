@@ -45,6 +45,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/ap
         php7-sqlite3@community \
         php7-tokenizer@community \
         php7-xml@community \
+        php7-xmlwriter@community \
         php7-xsl@community \
         php7-zlib@community \
         php7-zip@community && \
@@ -57,8 +58,10 @@ COPY ./php7/php.ini /etc/php7/conf.d/zzzz-custom.ini
 
 COPY ./composerinstall.php /root/
 
+ARG branch=develop
+
 RUN mkdir -p /var/www && rm -rf /var/www/* && cd /root && php ./composerinstall.php && cd /var/www && \
-    php /root/composer.phar create-project jensschulze/drupal-project:develop-dev disposabledrupal --stability dev --no-interaction && \
+    php /root/composer.phar create-project jensschulze/drupal-project:${branch}-dev disposabledrupal --stability dev --no-interaction && \
     rm -rf /root/.composer
 
 RUN  cd /var/www/disposabledrupal/web && \
