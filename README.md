@@ -1,8 +1,9 @@
 # A disposable Drupal 8 instance
 
 ## Preliminaries
-Execute `./build [-b BRANCH] YOURTAG` where
-* `BRANCH` is an existing git branch in [https://github.org/jensschulze/drupal-project](https://github.org/jensschulze/drupal-project)
+Execute `./build [-b BRANCH] [-i INSTALLPROFILE] -t YOURTAG` where
+* `BRANCH` (optional) is an existing git branch in [https://github.org/jensschulze/drupal-project](https://github.org/jensschulze/drupal-project). Default: `develop`.
+* `INSTALLPROFILE` (optional) is the desired install profile. Default: `standard`.
 * `YOURTAG` is the desired tag for the image being built.
 
 ## Usage
