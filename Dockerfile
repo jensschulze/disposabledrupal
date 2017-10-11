@@ -22,7 +22,7 @@ RUN echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/ap
         php7-fpm@community \
         php7-gd@community \
         php7-iconv@community \
-        php7-imagick@community \
+        php7-imagick@edgemain \
         php7-imap@community \
         php7-json@community \
         php7-ldap@community \
