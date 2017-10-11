@@ -3,8 +3,8 @@ FROM alpine:3.6
 RUN apk update --no-cache && \
     apk add --no-cache tzdata git vim curl && rm -f /etc/localtime && mv /usr/share/zoneinfo/Europe/Berlin /etc/localtime && apk del tzdata
 
-RUN echo '@community http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
-    echo '@edgemain http://nl.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories && \
+RUN echo '@community https://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
+    echo '@edgemain https://nl.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories && \
     apk update && apk upgrade && \
     apk add openssl@edgemain \
         sqlite@edgemain \
