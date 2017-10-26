@@ -2,7 +2,7 @@
 
 ## Preliminaries
 Execute `./build [-b BRANCH] [-i INSTALLPROFILE] -t YOURTAG` where
-* `BRANCH` (optional) is an existing git branch in [https://github.org/jensschulze/drupal-project](https://github.org/jensschulze/drupal-project). Default: `develop`.
+* `BRANCH` (optional) is an existing git branch in [https://github.com/jensschulze/drupal-project](https://github.com/jensschulze/drupal-project). Default: `develop`.
 * `INSTALLPROFILE` (optional) is the desired install profile. Default: `standard`.
 * `YOURTAG` is the desired tag for the image being built.
 ### Examples
