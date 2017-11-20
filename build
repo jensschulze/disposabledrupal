@@ -1,23 +1,31 @@
 #!/usr/bin/env bash
 
+buildphp=true
 branch=''
 installprofile=''
 tag=''
 
-while getopts 'b:i:t:' flag; do
+while getopts 'b:i:t:n' flag; do
   case "${flag}" in
     b) branch="--build-arg branch=${OPTARG} ";;
     i) installprofile="--build-arg installprofile=${OPTARG} ";;
     t) tag="${OPTARG} ";;
-    *) echo "Usage: ./build [-b BRANCH] [-i INSTALLPROFILE] -t YOURTAG" && exit 1;;
+    n) buildphp=false;;
+    *) echo "Usage: ./build [-n] [-b BRANCH] [-i INSTALLPROFILE] -t YOURTAG" && exit 1;;
   esac
 done
 
 if [ -z "${tag}" ]
 then
   echo "You have to choose a tag for your image!"
-  echo "Usage: ./build [-b BRANCH] [-i INSTALLPROFILE] -t YOURTAG"
+  echo "Usage: ./build [-n] [-b BRANCH] [-i INSTALLPROFILE] -t YOURTAG"
   exit 1
 fi
 
-docker build --no-cache -t jensschulze/disposabledrupal:${tag} ${branch}${installprofile}.
+if [ true = "$buildphp" ]
+then
+  docker build --no-cache -t jensschulze/php7:latest .
+fi
+
+docker build --no-cache -t jensschulze/disposabledrupal:${tag} ${branch}${installprofile}./drupal
+#docker build --no-cache -t jensschulze/disposabledrupal:${tag} ${branch}${installprofile}.
