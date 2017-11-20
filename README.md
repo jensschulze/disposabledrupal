@@ -1,7 +1,8 @@
 # A disposable Drupal 8 instance
 
 ## Preliminaries
-Execute `./build [-b BRANCH] [-i INSTALLPROFILE] -t YOURTAG` where
+Execute `./build [-n] [-b BRANCH] [-i INSTALLPROFILE] -t YOURTAG` where
+* Use the `-n` option if you do not want to rebuild the image *jensschulze/php7:latest*
 * `BRANCH` (optional) is an existing git branch in [https://github.com/jensschulze/drupal-project](https://github.com/jensschulze/drupal-project). Default: `develop`.
 * `INSTALLPROFILE` (optional) is the desired install profile. Default: `standard`.
 * `YOURTAG` is the desired tag for the image being built.
